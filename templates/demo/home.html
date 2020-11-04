@@ -1,0 +1,21 @@
+<html>
+
+<head>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js">
+    </script>
+</head>
+<body onload="brython()">
+
+<p>home</p>
+
+<a href="{% url 'template' %}">Template</a>
+
+<script type="text/python">
+from browser import document
+print("ovo dela");
+document <= "Hello !".capitalize()
+</script>
+</body>
+</html>
