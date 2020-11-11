@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -131,3 +132,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/mnt/111/PycharmProjects/DjangoProject/static'
+
+JAZZMIN_SETTINGS = {
+    # title of the window
+    "site_title": "Administracija",
+    "site_header": "Demo admin",
+    # Welcome text on the login screen
+    "welcome_sign": "Welcome to the library",
+}
