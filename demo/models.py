@@ -1,5 +1,6 @@
 import datetime
 
+from django.contrib.auth.models import User
 from django.utils import timezone
 
 from django.db import models
@@ -24,3 +25,8 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    description = models.CharField(max_length=100)

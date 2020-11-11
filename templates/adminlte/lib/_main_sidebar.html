@@ -1,0 +1,24 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+{% load custom_tags %}
+{% block nav_links_ul %}
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            {% block nav_links_outer %}
+                <li class="nav-header">{% block nav_heading %}MAIN NAVIGATION{% endblock %}</li>
+                {% block nav_links %}
+                    <li class="nav-item">
+                        <a href="{% url 'index' %}" class="nav-link {% active_link 'index' %} ">
+                            <i class="nav-icon fas fa-tachometer-alt"></i> <span>Home </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'template' %}" class="nav-link {% active_link 'template' %} ">
+                            <i class="nav-icon fas fa-user"></i> <span>Users</span>
+                        </a>
+                    </li>
+                {% endblock nav_links %}
+            {% endblock nav_links_outer %}
+        </ul>
+    </nav>
+{% endblock nav_links_ul %}
