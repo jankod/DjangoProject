@@ -17,6 +17,11 @@
                             <i class="nav-icon fas fa-user"></i> <span>Template</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{% url 'tasks' %}" class="nav-link {% active_link 'tasks' %} ">
+                            <i class="nav-icon fas fa-exclamation"></i> <span>Tasks</span>
+                        </a>
+                    </li>
                 {% endblock nav_links %}
             {% endblock nav_links_outer %}
         </ul>

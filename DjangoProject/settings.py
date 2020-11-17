@@ -143,7 +143,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'console': {
-            'format':  '%(pathname)s:%(lineno)s %(message)s '
+            'format': '%(pathname)s:%(lineno)s %(message)s '
         },
         'file': {
             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
@@ -163,3 +163,5 @@ LOGGING = {
 
 USE_TZ = False
 TIME_ZONE = "Europe/Zagreb"
+
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
