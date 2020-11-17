@@ -1,0 +1,32 @@
+{% extends 'adminlte/base.html' %}
+
+{% block title %}My App{% endblock %}
+
+
+{% block page_name %}Ovo je page name{% endblock %}
+{% block page_description %}Opis stranice je ovo{% endblock %}
+
+{% block page_actions %}
+    <a href="{% url 'template' %}" class="btn btn-success btn-sm">Create new</a>
+{% endblock %}
+
+{% block content %}
+    ovo je index.html
+    bas super
+
+
+    <div>
+        {#<textarea rows="20" onclick="this.focus();this.select()" style="width: 100%;"> {% filter force_escape %} {% debug %} {% endfilter %}</textarea>#}
+
+        {% with request.resolver_match.view_name as view_name %}
+            ...
+            {{ view_name }}
+            ...
+        {% endwith %}
+
+        <br>
+
+    </div>
+{% endblock %}
+
+

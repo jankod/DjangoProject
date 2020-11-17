@@ -6,13 +6,14 @@
 {% block body %}
     <div class="login-box">
         {% block logo %}
-        <div class="login-logo">
-            {# Mirrors block names used in _main_header.html #}
-            <a href="{% block logo_href %}/{% endblock %}">{% block logo_text %}<b>Admin</b>LTE{% endblock %}</a>
-        </div>
+            <div class="login-logo">
+                {# Mirrors block names used in _main_header.html #}
+                <a href="{% block logo_href %}/{% endblock %}">{% block logo_text %}<b>Admin</b>LTE{% endblock %}</a>
+            </div>
         {% endblock %}
         <!-- /.login-logo -->
         <div class="login-box-body">
+
             {% block login_errors %}
                 {% if form.errors and not form.non_field_errors %}
                     <p class="alert alert-danger">
@@ -31,7 +32,7 @@
             {% endblock login_errors %}
 
             {% block login_form %}
-                <form action="" method="post">
+                <form action="{% url 'login' %}" method="post">
                     {% csrf_token %}
                     {% if message %}
                         <p class="login-box-msg" style="color: red;">{{ message }}</p>
@@ -41,7 +42,8 @@
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" name="password" class="form-control" placeholder="{% trans 'Password' %}">
+                        <input type="password" name="password" class="form-control"
+                               placeholder="{% trans 'Password' %}">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">
@@ -50,7 +52,8 @@
                             {% endblock %}
                         </div>
                         <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">{% trans 'Login' %}</button>
+                            <button type="submit"
+                                    class="btn btn-primary btn-block btn-flat">{% trans 'Login' %}</button>
                         </div>
                     </div>
                 </form>
